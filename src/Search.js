@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   //let [searchResult, setsearchResult] = useState("");
   function handleResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -11,7 +13,7 @@ export default function Search(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      date: "December 5, 2021",
+      date: new Date(response.data.dt * 1000),
     });
   }
   //function handleSubmit(event) {
@@ -79,7 +81,7 @@ export default function Search(props) {
           </div>
           <div className="day-time col-5 offset-1">
             {" "}
-            {weatherData.date}
+            <FormattedDate date={weatherData.date} />
             <div id="today"></div>
           </div>
           <div className="precipitation col-6">
