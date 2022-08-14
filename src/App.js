@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Search from "./Search";
+import Weather from "./Weather";
 import Button from "./Button";
 import Footer from "./Footer";
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       <div className="container">
         <div className="homepage shadow">
-          <Search defaultCity="New York" />
+          <Weather defaultCity="New York" />
         </div>
         <div className="row">
           <Footer />

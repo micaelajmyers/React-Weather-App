@@ -7,7 +7,7 @@ export default function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        An Open Source "Work in Progress"{" "}
+        An Open Source Project{" "}
       </a>
       <span className="source"> by Mica Myers </span>
     </div>
