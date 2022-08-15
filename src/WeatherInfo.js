@@ -1,45 +1,14 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 export default function WeatherInfo(props) {
-  //Emoji Array
-  var emo = [
-    { id: "01d", type: "fa-solid fa-sun" },
-    { id: "01n", type: "fa-solid fa-moon" },
-    { id: "02d", type: "fa-solid fa-cloud-sun" },
-    { id: "02n", type: "fa-solid fa-cloud-moon" },
-    { id: "03d", type: "fa-solid fa-cloud" },
-    { id: "03n", type: "fa-solid fa-cloud-moon" },
-    { id: "04d", type: "fa-solid fa-cloud" },
-    { id: "04n", type: "fa-solid fa-cloud-moon" },
-    { id: "09d", type: "fa-solid fa-cloud-showers-heavy" },
-    { id: "09n", type: "fa-solid fa-cloud-moon-rain" },
-    { id: "10d", type: "fa-solid fa-cloud-showers-heavy" },
-    { id: "10n", type: "fa-solid fa-cloud-moon-rain" },
-    { id: "11d", type: "fa-solid fa-cloud-bolt" },
-    { id: "11n", type: "fa-solid fa-cloud-bolt" },
-    { id: "13d", type: "fa-solid fa-snowflake" },
-    { id: "13n", type: "fa-solid fa-snowflake" },
-    { id: "50d", type: "fa-solid fa-smog" },
-    { id: "50n", type: "fa-solid fa-smog" },
-  ];
-  //Emoji Array
-  var found = emo.find(function (emo, index) {
-    if (emo.id == props.data.iconid) return true;
-  });
-  let emojiname = found.type;
   return (
     <div>
+      <WeatherTemperature
+        weatheremoji={props.data.iconid}
+        fahrenheit={props.data.temperature}
+      />
       <div className="row basic">
-        <div
-          className="current-temperature col-3 offset-1"
-          id="current-temperature"
-        >
-          {Math.round(props.data.temperature)}
-        </div>
-        <div className="col-2 basic measurementButton">°F</div>
-        <div className="current-weather-icon col-6">
-          <i id="large-icon" className={`${emojiname}`}></i>{" "}
-        </div>
         <div className="city col-5 offset-1" id="city">
           {" "}
           {props.data.city}
