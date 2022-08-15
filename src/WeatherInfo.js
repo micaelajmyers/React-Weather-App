@@ -5,7 +5,7 @@ export default function WeatherInfo(props) {
   return (
     <div>
       <WeatherTemperature
-        weatheremoji={props.data.iconid}
+        code={props.data.iconid}
         fahrenheit={props.data.temperature}
       />
       <div className="row basic">
