@@ -1,7 +1,7 @@
 import React from "react";
 export default function Footer() {
   return (
-    <div className="basic col-4 offset-3">
+    <div className="basic col-12 ">
       <a
         href="https://github.com/micaelajmyers/react-weather"
         target="_blank"

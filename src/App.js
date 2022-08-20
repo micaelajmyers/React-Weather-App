@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import Weather from "./Weather";
-import Button from "./Button";
 import Footer from "./Footer";
 function App() {
   return (
@@ -12,7 +11,6 @@ function App() {
         </div>
         <div className="row">
           <Footer />
-          <Button />
         </div>
       </div>
       <script src="scripts/app.js"></script>

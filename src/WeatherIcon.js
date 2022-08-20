@@ -1,5 +1,5 @@
 import React from "react";
-export default function WeatherTemperature(props) {
+export default function WeatherIcon(props) {
   const codeMapping = {
     "01d": "fa-solid fa-sun",
     "01n": "fa-solid fa-moon",
@@ -20,20 +20,5 @@ export default function WeatherTemperature(props) {
     "50d": "fa-solid fa-smog",
     "50n": "fa-solid fa-smog",
   };
-
-  return (
-    <div className="row basic">
-      <span
-        className="current-temperature col-3 offset-1"
-        id="current-temperature"
-      >
-        {Math.round(props.fahrenheit)}
-      </span>
-      <span className="col-2 basic measurementButton">°F</span>
-
-      <div className="current-weather-icon col-6">
-        <i id="large-icon" className={`${codeMapping[props.code]}`}></i>{" "}
-      </div>
-    </div>
-  );
+  return <i className={`${codeMapping[props.code]}`}></i>;
 }
